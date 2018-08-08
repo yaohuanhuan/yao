@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <name>yao</name>
+    <modules>
+        <module>yao-api</module>
+    </modules>
+
+    <groupId>com.yao</groupId>
+    <artifactId>yao</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <file_encoding>UTF-8</file_encoding>
+
+        <org.springframework.version>4.3.10.RELEASE</org.springframework.version>
+        <org.mybatis.version>3.4.1</org.mybatis.version>
+        <org.mybatis.spring.version>1.3.0</org.mybatis.spring.version>
+
+        <junit.version>4.12</junit.version>
+        <mysql-connector-java.version>5.1.6</mysql-connector-java.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <jackson-core.version>2.8.2</jackson-core.version>
+        <jackson-databind.version>2.8.2</jackson-databind.version>
+        <logback-classic.version>1.1.3</logback-classic.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring核心框架 ssm的第一个s-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- SpringMvc框架 ssm的第二个s-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- Spring切面相关框架-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- Spring事务相关框架-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- Spring环境下测试框架支持-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- junit测试框架-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <!-- mybatis-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${org.mybatis.version}</version>
+        </dependency>
+        <!-- 连接mysql需要用到的-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
+        <!-- 数据库连接池-->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+        </dependency>
+        <!-- spring_jdbc spring对jdbc的各种操作比如事务 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!-- spring对mybatis的各种支持spring整合mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${org.mybatis.spring.version}</version>
+        </dependency>
+        <!-- 前后端直接json转化交互需要用的的库 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-core.version}</version>
+        </dependency>
+        <!-- 前后端直接json转化交互需要用的的库 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <!-- logback依赖库直接引用一个就好，已经包含slf4j-api和logback-core -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
