@@ -10,12 +10,6 @@
 
     <context:component-scan base-package="com.yao" ></context:component-scan>
 
-    <!-- swagger配置，别问我啥意思，照抄 -->
-    <bean class="com.yao.api.config.Swagger2"></bean>
-    <mvc:default-servlet-handler/>
-    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
-    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
-
     <!-- 配置注解处理器映射器 功能：寻找执行类Controller-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
     <!-- 配置注解处理器适配器 功能：调用controller方法，执行controller-->
