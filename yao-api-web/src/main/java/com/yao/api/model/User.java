@@ -1,14 +1,20 @@
 package com.yao.api.model;
 
 
+import tk.mybatis.mapper.annotation.KeySql;
+
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
  * Created by 姚焕焕 on 2018/08/09 09:06
  * desc
  * qq 1107129170@qq.com
  */
-public class User {
+public class User implements Serializable{
 
-
+    @Id
+    @KeySql(useGeneratedKeys = true)
     private long id;
 
     private String username;

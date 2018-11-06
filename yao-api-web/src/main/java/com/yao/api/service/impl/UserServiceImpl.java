@@ -1,4 +1,4 @@
-package com.yao.api.serviceImpl;
+package com.yao.api.service.impl;
 
 
 import com.yao.api.dao.UserMapper;
@@ -22,6 +22,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User register() {
         System.out.println("123");
-        return userMapper.selectAllUser().get(0);
+        return userMapper.selectAll().get(0);
     }
 }

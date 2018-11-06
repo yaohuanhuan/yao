@@ -12,13 +12,12 @@
           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 扫描指定包被注解的类 -->
-    <context:component-scan base-package="com.yao.api.serviceImpl" ></context:component-scan>
+    <context:component-scan base-package="com.yao.api.service" ></context:component-scan>
 
-    <!--扫描指定包的mapper注入到spring-->
-    <bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--扫描指定包的mapper注入到spring:如果使用了tk.mybatis，需要把包名前缀org改成tk-->
+    <bean name="mapperScannerConfigurer" class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.yao.api.dao"/>
     </bean>
-
     <!--加载配置文件-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
