@@ -1,9 +1,9 @@
-package com.yao.api.serviceImpl;
+package com.yao.admin.serviceImpl;
 
 
-import com.yao.api.dao.UserMapper;
-import com.yao.api.model.User;
-import com.yao.api.service.UserService;
+import com.yao.admin.dao.UserMapper;
+import com.yao.admin.model.User;
+import com.yao.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

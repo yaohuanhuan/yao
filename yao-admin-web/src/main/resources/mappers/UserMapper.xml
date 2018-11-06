@@ -5,19 +5,8 @@
 
 <!-- mapper标签要指定namespace属性，不然会报错，可看做包名-->
 <mapper namespace="com.yao.admin.dao.UserMapper">
-    <select id="findUserById" parameterType="int" resultType="com.yao.admin.model.User">
-        select * from user where id = #{id}
+
+    <select id="selectAllUser" resultType="com.yao.admin.model.User">
+        SELECT * FROM user
     </select>
-    <select id="findUserAll" resultType="com.yao.admin.model.User">
-        select * from user
-    </select>
-    <insert id="insertUser" parameterType="com.yao.admin.model.User">
-        insert into user(username,password,age) values(#{username},#{password},#{age})
-    </insert>
-    <delete id="deleteUserById" parameterType="int">
-        delete from user where id=#{id}
-    </delete>
-    <update id="updateUserPassword" parameterType="com.yao.admin.model.User">
-        update user set password=#{password} where id=#{id}
-    </update>
 </mapper>

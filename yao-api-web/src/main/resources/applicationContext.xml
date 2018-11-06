@@ -12,11 +12,11 @@
           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 扫描指定包被注解的类 -->
-    <context:component-scan base-package="com.yao.api" ></context:component-scan>
+    <context:component-scan base-package="com.yao.api.serviceImpl" ></context:component-scan>
 
     <!--扫描指定包的mapper注入到spring-->
     <bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.yao"/>
+        <property name="basePackage" value="com.yao.api.dao"/>
     </bean>
 
     <!--加载配置文件-->
@@ -28,11 +28,10 @@
         </property>
         <property name="fileEncoding" value="utf-8"/>
     </bean>
-    <!--mapper地址和mybatis配置文件地址-->
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath*:mappers/*Mapper.xml"></property>
-        <property name="configLocation" value="classpath:/mybatis-config.xml"/>
     </bean>
 
     <!-- 数据源 -->
@@ -59,7 +58,6 @@
         <property name="testWhileIdle" value="true"/>
         <!--# 检查连接有效性的SQL语句-->
         <property name="validationQuery" value="SELECT 1 FROM dual"/>
-
     </bean>
 
     <!-- 事务管理 -->

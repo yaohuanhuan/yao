@@ -11,8 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
 
-    <name>yao-api-web</name>
-    <artifactId>yao-api-web</artifactId>
+    <name>com.yao.api</name>
+    <artifactId>com.yao.api</artifactId>
 
     <build>
         <plugins>

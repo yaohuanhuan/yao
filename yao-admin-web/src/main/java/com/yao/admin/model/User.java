@@ -1,6 +1,5 @@
 package com.yao.admin.model;
 
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Created by 姚焕焕 on 2018/08/09 09:06
@@ -9,12 +8,22 @@ import io.swagger.annotations.ApiModelProperty;
  */
 public class User {
 
-    private long id;
-    @ApiModelProperty(value = "用户名",required = true)
-    private String username;
-    @ApiModelProperty(value = "密码",required = true)
-    private String password;
 
+    private long id;
+
+    private String username;
+
+    private String password;
+    private String created_date;
+
+
+    public String getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
+    }
 
     public long getId() {
         return id;

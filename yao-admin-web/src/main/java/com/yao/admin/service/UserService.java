@@ -1,7 +1,7 @@
-package com.yao.api.service;
+package com.yao.admin.service;
 
 
-import com.yao.api.model.User;
+import com.yao.admin.model.User;
 
 /**
  * Created by 姚焕焕 on 2018/11/06 11:22

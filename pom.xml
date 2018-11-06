@@ -7,8 +7,8 @@
 
     <name>yao</name>
     <modules>
-        <module>yao-api-web</module>
         <module>yao-admin-web</module>
+        <module>yao-api-web</module>
     </modules>
 
     <groupId>com.yao</groupId>

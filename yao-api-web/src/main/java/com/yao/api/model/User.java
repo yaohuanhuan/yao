@@ -1,41 +1,28 @@
 package com.yao.api.model;
 
-import io.swagger.annotations.ApiModelProperty;
-
-import javax.persistence.Table;
 
 /**
  * Created by 姚焕焕 on 2018/08/09 09:06
  * desc
  * qq 1107129170@qq.com
  */
-@Table(name = "user")
 public class User {
 
-    @ApiModelProperty(value = "用户id")
+
     private long id;
-    @ApiModelProperty(value = "用户名")
+
     private String username;
-    @ApiModelProperty(value = "密码")
+
     private String password;
+    private String created_date;
 
-    private String createdDate;
-    private String updateDate;
 
-    public String getUpdateDate() {
-        return updateDate;
+    public String getCreated_date() {
+        return created_date;
     }
 
-    public void setUpdateDate(String updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
     }
 
     public long getId() {

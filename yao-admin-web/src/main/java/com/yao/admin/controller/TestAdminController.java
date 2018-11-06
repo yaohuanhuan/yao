@@ -1,11 +1,17 @@
 package com.yao.admin.controller;
 
 
+import com.yao.admin.model.User;
+import com.yao.admin.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 
 /**
@@ -18,10 +24,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TestAdminController {
 
+    @Autowired
+    private UserService userService;
+
     @ApiOperation(value = "我是value", notes = "notes [@姚焕焕]")
     @RequestMapping(value = "/index",method = RequestMethod.GET)
-    public String test(){
+    @ResponseBody
+    public User test(){
 
-        return "index";
+        return userService.register();
     }
 }

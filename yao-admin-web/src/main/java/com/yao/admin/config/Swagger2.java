@@ -1,4 +1,4 @@
-package com.yao.api.config;
+package com.yao.admin.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -31,7 +31,7 @@ import static com.google.common.collect.Lists.newArrayList;
 @Configuration
 @EnableSwagger2
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.yao.api.controller"})
+@ComponentScan(basePackages = {"com.yao.admin.controller"})
 public class Swagger2 {
 
 //访问地址http://localhost:8080/swagger-ui.html

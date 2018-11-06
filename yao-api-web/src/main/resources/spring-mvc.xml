@@ -8,7 +8,7 @@
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.yao" ></context:component-scan>
+    <context:component-scan base-package="com.yao.api.controller" ></context:component-scan>
 
     <!-- swagger配置，别问我啥意思，照抄 -->
     <bean class="com.yao.api.config.Swagger2"></bean>
