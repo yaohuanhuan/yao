@@ -2,9 +2,9 @@ package com.yao.api.dao;
 
 
 import com.yao.api.model.User;
+import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
-import java.util.List;
 
 /**
  * Created by 姚焕焕 on 2018/08/09 09:41
@@ -13,6 +13,6 @@ import java.util.List;
  */
 public interface UserMapper extends Mapper<User> {
 
-    List<User> selectAllUser();
+    int  register(User user);
 
 }

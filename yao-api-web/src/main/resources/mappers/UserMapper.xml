@@ -6,7 +6,8 @@
 <!-- mapper标签要指定namespace属性，不然会报错，可看做包名-->
 <mapper namespace="com.yao.api.dao.UserMapper">
 
-    <select id="selectAllUser" resultType="com.yao.api.model.User">
-        SELECT * FROM user
-    </select>
+    <insert id="register">
+      INSERT INTO user (username,password,created_date,update_date)
+      VALUE (#{username},#{password},#{createdDate},#{updateDate})
+    </insert>
 </mapper>

@@ -1,6 +1,7 @@
 package com.yao.api.service;
 
 
+import com.yao.api.common.ServerResponse;
 import com.yao.api.model.User;
 
 /**
@@ -10,6 +11,9 @@ import com.yao.api.model.User;
  */
 public interface UserService {
 
-    User register();
+
+    ServerResponse<User> register(User user);
+
+    ServerResponse<User> login(User user);
 
 }
