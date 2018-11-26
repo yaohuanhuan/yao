@@ -1,6 +1,7 @@
 package com.yao.api.service.impl;
 
 
+import com.yao.api.common.JWTUtil;
 import com.yao.api.common.MD5Util;
 import com.yao.api.common.ServerResponse;
 import com.yao.api.dao.UserMapper;
@@ -9,8 +10,7 @@ import com.yao.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by 姚焕焕 on 2018/11/06 11:23
@@ -101,12 +101,21 @@ public class UserServiceImpl implements UserService {
                 if (list.isEmpty()){
                     return ServerResponse.createByErrorMessage("用户名或密码错误");
                 }else {
-                    return ServerResponse.createBySuccess(list.get(0));
+                    //生成秘钥
+                    String secret = UUID.randomUUID().toString().replace("-","");
+                    tempUser = list.get(0);
+                    tempUser.setSecret(secret);
+                    userMapper.updateByPrimaryKey(tempUser);
+                    Map<String,String> map = new HashMap<>();
+                    map.put("user_id", String.valueOf(tempUser.getId()));
+                    tempUser.setToken(JWTUtil.getToken(map,secret));
+                    tempUser.setPassword(null);
+                    tempUser.setSecret(null);
+                    return ServerResponse.createBySuccess("登录成功",tempUser);
                 }
             }
         }catch (Exception e){
             return ServerResponse.createBySuccessMessage("登录失败:" + e.getCause().getMessage());
         }
-
     }
 }

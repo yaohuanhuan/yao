@@ -40,4 +40,14 @@ public class UserController extends BaseController {
         return userService.login(user);
     }
 
+    @ApiOperation(value = "用户登录",notes = "用户登录 [@姚焕焕]")
+    @ResponseBody
+    @RequestMapping(value = "login2",method = RequestMethod.POST)
+    public ServerResponse<User> login2(String username,String password){
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        return userService.login(user);
+    }
+
 }

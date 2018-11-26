@@ -1,6 +1,7 @@
 package com.yao.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
@@ -22,26 +23,21 @@ public class User implements Serializable{
     @ApiModelProperty(value = "密码",example = "123456")
     private String password;
 
-    @JsonIgnore
     @ApiModelProperty(value = "秘钥",hidden = true)
     private String secret;
 
     @ApiModelProperty(value = "token",hidden = true)
     transient private String token;
-    @JsonIgnore
 
     @ApiModelProperty(value = "创建日期",hidden = true)
     private String createdDate;
 
-    @JsonIgnore
     @ApiModelProperty(value = "更新日期",hidden = true)
     private String updateDate;
 
-    @JsonIgnore
     @ApiModelProperty(value = "最近登录日期",hidden = true)
     private String lastLogin;
 
-    @JsonIgnore
     @ApiModelProperty(value = "删除标志",hidden = true)
     private String deleteFlag;
 
@@ -65,6 +61,7 @@ public class User implements Serializable{
         return password;
     }
 
+    @JsonProperty
     public void setPassword(String password) {
         this.password = password;
     }
